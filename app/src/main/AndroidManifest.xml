@@ -48,7 +48,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".mainContent" />
+        <activity android:name=".Page_Main" />
     </application>
 
 </manifest>
