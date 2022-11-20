@@ -1,7 +1,11 @@
 package com.example.trainway;
 
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class TicketMain {
@@ -9,16 +13,17 @@ public class TicketMain {
     public static class Ticket{                    // Ticket Object
         private String url = "https://trainway-9a85a-default-rtdb.firebaseio.com";  // URL for firebase database
         private DatabaseReference mDatabase;
-        private int ID;                  // Ticket ID
+        private String ID;                  // Ticket ID
         private double ticket_price;    // Ticket Price
         private String route;           // Ticket Route
         private String day;             // Day for Ticket
         private String time;            // Time for Train Departure
-        private int count;              // Contains tickets available
+        public int count;              // Contains tickets available
 
         public Ticket(){};
         // Constructor for Ticket
-        public Ticket(double price, String routeName, String date, String timer, int counter){
+        public Ticket(String tID,double price, String routeName, String date, String timer, int counter){
+            this.ID = tID;
             ticket_price = price;
             route = routeName;
             day = date;
@@ -29,7 +34,7 @@ public class TicketMain {
         public void newTicket(String ticketID,double price, String routeName, String date, String timer, int counter)
         {
             mDatabase = FirebaseDatabase.getInstance(url).getReference();
-            Ticket ticket = new Ticket(price,routeName,date,timer,counter);
+            Ticket ticket = new Ticket(ticketID,price,routeName,date,timer,counter);
             mDatabase.child("tickets").child(ticketID).setValue(ticket);
         }
 
@@ -51,11 +56,27 @@ public class TicketMain {
         public void editTime(String newTime) {  time = newTime;}
         public void editCount(int newCount){count = newCount;}
 
+        DatabaseReference ref;
+        public void addTicket(String ID, User user) {
+            user.tickets[user.index] = ID;
+            user.index++;
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Ticket ticket = dataSnapshot.getValue(Ticket.class);
+                    System.out.println(dataSnapshot.getKey() + " was " + ticket.count + " meters tall.");
 
+                }
 
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // ...
+                }
+            });
 
 
     }
 
 
+}
 }
