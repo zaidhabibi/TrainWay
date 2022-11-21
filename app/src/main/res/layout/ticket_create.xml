@@ -32,11 +32,11 @@
         app:layout_constraintVertical_bias="0.054" />
 
     <Button
-        android:id="@+id/btnTicket"
+        android:id="@+id/createTix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="40dp"
         android:onClick="createTicket"
         android:text="Create Ticket"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,6 +111,18 @@
         android:text="Count"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/routeText" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="64dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toEndOf="@+id/createTix" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
