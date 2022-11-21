@@ -2,23 +2,27 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:label="Home"
-        tools:layout="@layout/content_main" />
+        android:id="@+id/FirstFragment"
+        android:name="com.example.trainway.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
 
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_person"
-        android:name="com.example.trainway.ProfileActivity"
-        android:label="Person"
-        tools:layout="@layout/activity_profile" />
+        android:id="@+id/SecondFragment"
+        android:name="com.example.trainway.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.trainway.TicketMain"
-        android:label="Settings"
-        tools:layout="@layout/content_main" />
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 </navigation>
