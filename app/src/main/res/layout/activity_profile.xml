@@ -94,4 +94,47 @@
         app:layout_constraintLeft_toLeftOf="@+id/fullNameTitle"
         android:textSize="20sp" />
 
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_navigation" />
+
+
+
+
+
+    <TextView
+        android:id="@+id/currentBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Balance:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/ageTitle"
+        app:layout_constraintTop_toBottomOf="@+id/age"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="172dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="100dp"
+        android:gravity="center"
+        android:text="$1000.00"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@+id/currentBalance"
+        app:layout_constraintTop_toBottomOf="@+id/currentBalance" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
