@@ -67,7 +67,8 @@ public class Page_Main extends AppCompatActivity {
         myTickets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "My Tickets Button", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Page_Main.this, "My Tickets Button", Toast.LENGTH_SHORT).show();
+                goToMyTickets();
             }
         });
 
@@ -121,12 +122,13 @@ public class Page_Main extends AppCompatActivity {
         startActivity(intent);
      */
 
-    /*
+
     //goToMyTickets
     private void goToMyTickets() {
-        Intent intent = new Intent(this, Page_MyTickets.class);
+        Intent intent = new Intent(this, TicketCreator.class);
         startActivity(intent);
-     */
+    }
+
 }
 
 

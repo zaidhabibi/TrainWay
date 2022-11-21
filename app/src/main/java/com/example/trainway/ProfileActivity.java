@@ -50,6 +50,9 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();

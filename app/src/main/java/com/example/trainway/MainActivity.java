@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +26,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String url = "https://trainway-9a85a-default-rtdb.firebaseio.com";  // URL for firebase database
     private static final String TAG = "MyActivity";
-    private FirebaseDatabase database = FirebaseDatabase.getInstance(url);
+    public FirebaseDatabase database = FirebaseDatabase.getInstance(url);
 
 
 
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
@@ -83,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+
 
     private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
@@ -141,35 +150,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void createTicket(View view)
-    {
-        DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
-        // Write Ticket to Database
-        EditText Id = findViewById(R.id.idText);
-        EditText route = findViewById(R.id.routeText);
-
-        // Copies user input into ticket creator
-        EditText price = findViewById(R.id.priceText);
-        String priced = price.getText().toString();
-        double finalPrice= Double.parseDouble(priced);
-        EditText time = findViewById(R.id.timeText);
-        EditText date = findViewById(R.id.dateText);
-        EditText count = findViewById(R.id.countText);
-        String tCount= count.getText().toString();
-        int finalCounter = Integer.parseInt(tCount);
-        TicketMain.Ticket test = new TicketMain.Ticket();
-        test.newTicket("test",10,"Dallas","11/23","10:30",50);
-        test.newTicket(Id.getText().toString(),finalPrice,route.getText().toString(),date.getText().toString(),time.getText().toString(),finalCounter);
-
-    }
 
     public void deleteTicket(){
 
     }
-    public void buyTicket(View view){
+    public void buyTicket(String ID){
+        DatabaseReference ref;
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        ref = FirebaseDatabase.getInstance().getReference("Users");
+        String uid = user.getUid();
+        ref.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                TicketMain.Ticket tix = new TicketMain.Ticket();
+                if (user != null) {
+                    User userProfile = snapshot.getValue(User.class);
+                    int userIndex = userProfile.index;
+                    ref.child(uid).child("tickets").push();
+                    tix.addTicket("test",userProfile);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+            });
 
     }
+
 
     public void refundTicket(){
 
