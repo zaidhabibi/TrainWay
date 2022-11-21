@@ -17,6 +17,21 @@
         <item>Fort Worth</item>
         <item>College Station</item>
     </string-array>
+    <string-array name="spinner_Times">
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
+        <item>12:00</item>
+        <item>12:30</item>
+        <item>1:00</item>
+        <item>1:30</item>
+        <item>2:30</item>
+    </string-array>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

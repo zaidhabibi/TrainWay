@@ -17,6 +17,7 @@ public class User {
     public String fullName, age, email;
     public String[] tickets;
     public int index = 0;
+    public double money= 1000;
 
     public User() {
 

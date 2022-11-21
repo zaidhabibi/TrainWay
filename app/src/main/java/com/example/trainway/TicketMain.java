@@ -1,6 +1,13 @@
 package com.example.trainway;
 
 import com.google.firebase.auth.FirebaseUser;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -57,6 +64,7 @@ public class TicketMain {
         public void editCount(int newCount){count = newCount;}
 
         DatabaseReference ref;
+
         public void addTicket(String ID, User user) {
             user.tickets[user.index] = ID;
             user.index++;
@@ -79,4 +87,8 @@ public class TicketMain {
 
 
 }
+    /*Spinner spinnerDestination = findViewByID(R.id.spinner);
+    ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(this, R.array.spinner_String_Destination, android.R.layout.simple_spinner_item);
+    adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+    */
 }
