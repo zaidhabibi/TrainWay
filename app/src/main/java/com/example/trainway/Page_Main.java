@@ -23,7 +23,8 @@ public class Page_Main extends AppCompatActivity {
             notificationButton,
             myTickets;
 
-    Button temp_profileButton;
+    Button temp_profileButton,
+            temp_settingsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +38,9 @@ public class Page_Main extends AppCompatActivity {
         myTickets = findViewById(R.id.myTickets);
 
         temp_profileButton = findViewById(R.id.temp_profileButton);
+        temp_settingsButton = findViewById(R.id.temp_settingButton);
 
-        //variable functions for Image Buttong
+        //variable functions for Image Button
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,11 +77,23 @@ public class Page_Main extends AppCompatActivity {
             }
         });
 
+        temp_settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSettings();
+            }
+        });
+
     }
 
     //function for Button
     private void goToProfile() {
         Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    private void goToSettings() {
+        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 
