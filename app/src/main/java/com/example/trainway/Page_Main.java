@@ -1,7 +1,6 @@
 package com.example.trainway;
 
 import android.content.Intent;
-import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,8 +23,7 @@ public class Page_Main extends AppCompatActivity {
             notificationButton,
             myTickets;
 
-    Button temp_profileButton,
-            temp_settingsButton;
+    Button temp_profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,36 +37,33 @@ public class Page_Main extends AppCompatActivity {
         myTickets = findViewById(R.id.myTickets);
 
         temp_profileButton = findViewById(R.id.temp_profileButton);
-        temp_settingsButton = findViewById(R.id.temp_settingButton);
 
         //variable functions for Image Button
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(Page_Main.this, "Map Button", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Page_Main.this, Station.class));
+                Toast.makeText(Page_Main.this, "Map Button", Toast.LENGTH_SHORT).show();
             }
         });
 
         routeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Route Button", Toast.LENGTH_SHORT).show();
+                goToRoute();
             }
         });
 
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Notification Button", Toast.LENGTH_SHORT).show();
+                goToNotification();
             }
         });
 
         myTickets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(Page_Main.this, "My Tickets Button", Toast.LENGTH_SHORT).show();
-                goToMyTickets();
+                Toast.makeText(Page_Main.this, "My Tickets Button", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -80,23 +75,11 @@ public class Page_Main extends AppCompatActivity {
             }
         });
 
-        temp_settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToSettings();
-            }
-        });
-
     }
 
     //function for Button
     private void goToProfile() {
         Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-    }
-
-    private void goToSettings() {
-        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 
@@ -108,27 +91,26 @@ public class Page_Main extends AppCompatActivity {
         startActivity(intent);
     }*/
 
-    /*
+
     //go to route
     private void goToRoute() {
-        Intent intent = new Intent(this, Page_Route.class);
-        startActivity(intent);
-    }*/
-
-    /*
-    //goToNotification
-    private void goToNotification() {
-        Intent intent = new Intent(this, Page_Notification.class);
-        startActivity(intent);
-     */
-
-
-    //goToMyTickets
-    private void goToMyTickets() {
-        Intent intent = new Intent(this, TicketCreator.class);
+        Intent intent = new Intent(this, RoutesActivity.class);
         startActivity(intent);
     }
 
+
+    //goToNotification
+    private void goToNotification() {
+        Intent intent = new Intent(this, NotificationsActivity.class);
+        startActivity(intent);
+    }
+
+    /*
+    //goToMyTickets
+    private void goToMyTickets() {
+        Intent intent = new Intent(this, Page_MyTickets.class);
+        startActivity(intent);
+     */
 }
 
 
