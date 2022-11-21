@@ -2,6 +2,10 @@ package com.example.trainway;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.trainway.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     // We need a user ID so we can link it to an individual user.
     private String userID;
-
+    private ActivityMainBinding binding;
 
 
     @Override
@@ -40,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(ProfileActivity.this, com.example.trainway.MainActivity.class));
+                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
             }
         });
 
@@ -77,6 +83,9 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(ProfileActivity.this, "Something Wrong Happened.", Toast.LENGTH_LONG).show();
             }
         });
+
+
+        
 
     }
 }
