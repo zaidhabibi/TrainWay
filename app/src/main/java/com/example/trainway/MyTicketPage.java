@@ -36,6 +36,9 @@ public class MyTicketPage extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spinner_String_Destination, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerDestination.setAdapter(adapter);
-
+        Spinner spinnerTime = findViewById(R.id.spinner2);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.spinner_Times, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerTime.setAdapter(adapter2);
     }
 }
