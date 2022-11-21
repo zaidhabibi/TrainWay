@@ -29,6 +29,13 @@
         <item>1:30</item>
         <item>2:30</item>
     </string-array>
+    <string-array name="spinner_String_Routes">
+        <item>Buckner->North Carrollton/Frankford</item>
+        <item>Belt Line->Parker Road</item>
+        <item>TP Station->Union Station</item>
+        <item>Westmoreland->Parker Road</item>
+        <item>Ledbetter->Downtown Rowlett</item>
+    </string-array>
 
 
 

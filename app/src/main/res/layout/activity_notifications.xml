@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--
+    This class is the XML code for the Notifications feature of the TrainWay application.
+    The first column is TextView objects that display the notification.
+    These notifications will be sent by other sections of the application. (i.e. when a ticket is purchased -> notification sent)
+    The second column is the TextView objects that is the timestamp of when the notification is sent.
+    The third column is ImageView objects, that will also be buttons that will be able to be checked off when a message is sent.
+    The NofificationsActivity.java class will have the implementations of the buttons and features for Project 5 check-in.
+     -->
+
+    <TextView
+        android:id="@+id/msgText4"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="You successfully booked the train from ____ to _____ at ______."
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText3" />
+
+    <TextView
+        android:id="@+id/msgText5"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="You successfully booked the train from ____ to _____ at ______."
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText4" />
+
+    <TextView
+        android:id="@+id/msgText6"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="You successfully booked the train from ____ to _____ at ______."
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="414dp"
+        android:layout_height="74dp"
+        android:background="#757575"
+        android:backgroundTint="#9E9E9E"
+        android:text="My Notifications"
+        android:textAlignment="center"
+        android:textColor="#ECE6E4"
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="75dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="7dp"
+        android:text="Messages"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="75dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginTop="7dp"
+        android:text="Time"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="75dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="7dp"
+        android:text="Status"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/cb0"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <CheckBox
+        android:id="@+id/cb1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/timeText1"
+        app:layout_constraintTop_toBottomOf="@+id/cb0" />
+
+    <CheckBox
+        android:id="@+id/cb2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/timeText2"
+        app:layout_constraintTop_toBottomOf="@+id/cb1" />
+
+    <CheckBox
+        android:id="@+id/cb3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="28dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/timeText3"
+        app:layout_constraintTop_toBottomOf="@+id/cb2" />
+
+    <CheckBox
+        android:id="@+id/cb4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/timeText4"
+        app:layout_constraintTop_toBottomOf="@+id/cb3" />
+
+    <CheckBox
+        android:id="@+id/cb5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/timeText5"
+        app:layout_constraintTop_toBottomOf="@+id/cb4" />
+
+    <CheckBox
+        android:id="@+id/cb6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/timeText6"
+        app:layout_constraintTop_toBottomOf="@+id/cb5" />
+
+    <TextView
+        android:id="@+id/msgText0"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="You successfully verified your TrainWay account."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/msgText1"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="You successfully created your TrainWay account. "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText0" />
+
+    <TextView
+        android:id="@+id/msgText2"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="You successfully booked the train from ____ to _____ at ______."
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText1" />
+
+    <TextView
+        android:id="@+id/msgText3"
+        android:layout_width="218dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="You successfully booked the train from ____ to _____ at ______."
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msgText2" />
+
+    <TextView
+        android:id="@+id/timeText0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="5:00pm"
+        app:layout_constraintStart_toEndOf="@+id/msgText0"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/timeText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="46dp"
+        android:text="5:00pm"
+        app:layout_constraintStart_toEndOf="@+id/msgText1"
+        app:layout_constraintTop_toBottomOf="@+id/timeText0" />
+
+    <TextView
+        android:id="@+id/timeText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="5:00pm"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/msgText2"
+        app:layout_constraintTop_toBottomOf="@+id/timeText1" />
+
+    <TextView
+        android:id="@+id/timeText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:text="5:00pm"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/msgText3"
+        app:layout_constraintTop_toBottomOf="@+id/timeText2" />
+
+    <TextView
+        android:id="@+id/timeText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="5:00pm"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/msgText4"
+        app:layout_constraintTop_toBottomOf="@+id/timeText3" />
+
+    <TextView
+        android:id="@+id/timeText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:text="5:00pm"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/msgText5"
+        app:layout_constraintTop_toBottomOf="@+id/timeText4" />
+
+    <TextView
+        android:id="@+id/timeText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="5:00pm"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/msgText6"
+        app:layout_constraintTop_toBottomOf="@+id/timeText5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
