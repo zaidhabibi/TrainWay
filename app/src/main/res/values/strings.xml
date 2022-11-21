@@ -17,6 +17,7 @@
         <item>Fort Worth</item>
         <item>College Station</item>
     </string-array>
+
     <string-array name="spinner_Times">
         <item>9:00</item>
         <item>10:00</item>
@@ -36,7 +37,6 @@
         <item>Westmoreland->Parker Road</item>
         <item>Ledbetter->Downtown Rowlett</item>
     </string-array>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
