@@ -1,6 +1,7 @@
 package com.example.trainway;
 
 import android.content.Intent;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,8 @@ public class Page_Main extends AppCompatActivity {
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Map Button", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Page_Main.this, "Map Button", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Page_Main.this, Station.class));
             }
         });
 
