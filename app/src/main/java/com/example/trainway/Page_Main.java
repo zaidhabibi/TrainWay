@@ -58,14 +58,14 @@ public class Page_Main extends AppCompatActivity {
         routeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Route Button", Toast.LENGTH_SHORT).show();
+                goToRoute();
             }
         });
 
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Notification Button", Toast.LENGTH_SHORT).show();
+                goToNotification();
             }
         });
 
@@ -134,19 +134,17 @@ public class Page_Main extends AppCompatActivity {
         startActivity(intent);
     }*/
 
-    /*
-    //go to route
+    //go to routes
     private void goToRoute() {
-        Intent intent = new Intent(this, Page_Route.class);
+        Intent intent = new Intent(this, RoutesActivity.class);
         startActivity(intent);
-    }*/
+    }
 
-    /*
-    //goToNotification
+    //go to notifications
     private void goToNotification() {
-        Intent intent = new Intent(this, Page_Notification.class);
+        Intent intent = new Intent(this, NotificationsActivity.class);
         startActivity(intent);
-     */
+    }
 
     /*
     //goToMyTickets
