@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String url = "https://trainway-9a85a-default-rtdb.firebaseio.com";  // URL for firebase database
     private static final String TAG = "MyActivity";
-    private FirebaseDatabase database = FirebaseDatabase.getInstance(url);
+    public FirebaseDatabase database = FirebaseDatabase.getInstance(url);
 
     //private ImageButton homeButton, profileButton, settingsButton;
 
