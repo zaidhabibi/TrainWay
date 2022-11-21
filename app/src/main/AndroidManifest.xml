@@ -27,7 +27,21 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
+        </activity>
+
+        <activity
+            android:name=".RoutesActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
+        </activity>
         <activity
             android:name=".TicketCreator"
             android:exported="false">
