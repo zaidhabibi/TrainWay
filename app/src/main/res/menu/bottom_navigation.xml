@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/person"
+        android:id="@+id/navigation_person"
         android:title="Person"
-        android:icon="@mipmap/ic_person_foreground"/>
+        android:icon="@drawable/ic_person_foreground"/>
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/navigation_home"
         android:title="Home"
-        android:icon="@mipmap/ic_home_foreground"/>
+        android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/settings"
+        android:id="@+id/navigation_settings"
         android:title="Settings"
-        android:icon="@mipmap/ic_setting_foreground"/>
+        android:icon="@drawable/ic_settings"/>
 </menu>
