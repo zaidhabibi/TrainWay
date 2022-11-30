@@ -22,7 +22,10 @@ public class Page_Main extends AppCompatActivity {
     ImageButton mapButton,
             routeButton,
             notificationButton,
-            myTickets;
+            myTickets,
+            homeButton,
+            profileButton,
+            settingsButton;
 
     Button temp_profileButton,
             temp_settingsButton;
@@ -37,9 +40,10 @@ public class Page_Main extends AppCompatActivity {
         routeButton = findViewById(R.id.routeButton);
         notificationButton = findViewById(R.id.notificationButton);
         myTickets = findViewById(R.id.myTickets);
+        homeButton = findViewById(R.id.home_button);
+        profileButton = findViewById(R.id.profile_button);
+        settingsButton = findViewById(R.id.settings_button);
 
-        temp_profileButton = findViewById(R.id.temp_profileButton);
-        temp_settingsButton = findViewById(R.id.temp_settingButton);
 
         //variable functions for Image Button
         mapButton.setOnClickListener(new View.OnClickListener() {
@@ -67,25 +71,46 @@ public class Page_Main extends AppCompatActivity {
         myTickets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(Page_Main.this, "My Tickets Button", Toast.LENGTH_SHORT).show();
                 goToMyTickets();
             }
         });
 
-        //variable functions for Button
-        temp_profileButton.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToProfile();
+                Intent intent = new Intent(Page_Main.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Page_Main.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Page_Main.this, Settings.class);
+                startActivity(intent);
             }
         });
 
-        temp_settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToSettings();
-            }
-        });
+//        //variable functions for Button
+//        temp_profileButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goToProfile();
+//            }
+//        });
+//
+//        temp_settingsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goToSettings();
+//            }
+//        });
 
     }
 
@@ -125,8 +150,7 @@ public class Page_Main extends AppCompatActivity {
     private void goToMyTickets() {
         Intent intent = new Intent(this, TicketCreator.class);
         startActivity(intent);
+
     }
-
 }
-
 

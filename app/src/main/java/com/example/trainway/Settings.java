@@ -55,7 +55,7 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-qns.setOnClickListener(new View.OnClickListener() {
+        qns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(Settings.this, "Question & Suggestions Button", Toast.LENGTH_SHORT).show();

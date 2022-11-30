@@ -87,6 +87,14 @@
                 android:value="" />
         </activity>
         <activity android:name=".Page_Main" />
+
+        <activity
+            android:name=".Settings"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 
