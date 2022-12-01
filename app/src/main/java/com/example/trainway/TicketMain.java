@@ -57,25 +57,7 @@ public class TicketMain {
 
         DatabaseReference ref;
 
-        public void addTicket(String ID, User user) {
-            user.tickets[user.index] = ID;
-            user.index++;
-            ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    Ticket ticket = dataSnapshot.getValue(Ticket.class);
-                    System.out.println(dataSnapshot.getKey() + " was " + ticket.count + " meters tall.");
-
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                    // ...
-                }
-            });
-
-
-    }
+        
 
 
 }
