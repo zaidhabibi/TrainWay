@@ -1,5 +1,6 @@
 package com.example.trainway;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -31,26 +32,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
-public class TicketCreator extends MainActivity {
+public class TicketCreator extends MainActivity  {
     private String url = "https://trainway-9a85a-default-rtdb.firebaseio.com";  // URL for firebase database
     private DatabaseReference reference;
-
-
+    ArrayList<String> strings = new ArrayList<>();
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // strings.clear();
         // list of tickets
         Button next;
-        String[] stringRoute = new String[1];
-        stringRoute[0]="error";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ticket_create);
         listView = findViewById(R.id.list);
         // next button
         next = findViewById(R.id.nextButton);
         next.setOnClickListener(view -> goToMyTickets2());
-        String[] stringTime = new String[100];
         reference = FirebaseDatabase.getInstance(url).getReference();
         reference.child("tickets").addValueEventListener(new ValueEventListener() {
             @Override
@@ -58,15 +56,17 @@ public class TicketCreator extends MainActivity {
                 //retrieves children
                 Iterable<DataSnapshot> children = dataSnapshot.getChildren();
                 // shakes hand with all children
-                int z = 0;
+
+
                 for(DataSnapshot child: children){
                     TicketMain.Ticket value = child.getValue(TicketMain.Ticket.class);
                     //tickets.add(value);
-                    stringRoute[z] = value.getRoute();
-                    stringTime[z] = value.getTime();
                     Log.e("TAG", value.getRoute());
-                    Log.e("TAG", stringRoute[0]);
-                    z++;
+                    strings.add(value.getRoute()+"          "+value.getTime() );
+                    if(true){
+                        workAround();
+                    }
+                    //stringTime[z] = value.getTime();
 
                 }
             }
@@ -76,19 +76,20 @@ public class TicketCreator extends MainActivity {
             }
 
 
+
         });
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,
-               android.R.layout.simple_list_item_1,
-                stringRoute);
-        listView.setAdapter(adapter);
-
-
-
-
-
 
     }
 
+    public void workAround() {
+        String[] array = strings.toArray(new String[strings.size()]);
+        // Log.e("TAG", strings.get(0));
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                array);
+        listView.setAdapter(adapter);
+    }
 
     public void goToMyTickets2() {
         Intent intent = new Intent(this, MyTicketPage.class);

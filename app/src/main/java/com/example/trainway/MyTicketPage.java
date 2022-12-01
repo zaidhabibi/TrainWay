@@ -67,6 +67,12 @@ public class MyTicketPage extends AppCompatActivity {
             //test.newTicket("test",10,"Dallas","11/23","10:30",50);
             test.newTicket(String.valueOf(x10),"10",route.getSelectedItem().toString(),"11/30",time.getSelectedItem().toString(),1);
             x10++;
+            goToMyTickets();
         }
+     private void goToMyTickets() {
+        Intent intent = new Intent(this, TicketCreator.class);
+        startActivity(intent);
+
+    }
 
 }
