@@ -6,157 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/dateText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="248dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:text="Date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/routeText" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
-
-    <Button
-        android:id="@+id/createTix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="60dp"
-        android:onClick="createTicket"
-        android:text="Create Ticket"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateText" />
-
-    <EditText
-        android:id="@+id/idText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="84dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:text="ID"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/routeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:text="Route"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idText" />
-
-    <EditText
-        android:id="@+id/priceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="number|textPersonName"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:text="Price"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/routeText" />
-
-    <EditText
-        android:id="@+id/timeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:text="Time"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceText" />
-
-    <EditText
-        android:id="@+id/countText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="176dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:text="Count"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/routeText" />
-
     <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
         android:layout_marginBottom="64dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toEndOf="@+id/createTix" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="196dp"
+        android:layout_height="112dp"
+        android:gravity="center"
+        android:text="My Tickets"
+        android:textSize="32dp"
 
-    <ImageButton
-            android:id="@+id/home_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/home" />
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
-            android:id="@+id/profile_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/profile" />
-
-        <ImageButton
-            android:id="@+id/settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/settings" />
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="309dp"
+        android:layout_height="332dp"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
-
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

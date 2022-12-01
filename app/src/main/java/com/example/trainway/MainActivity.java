@@ -133,28 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void createTicket(View view)
-    {
-        DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World!");
-        // Write Ticket to Database
-        EditText Id = findViewById(R.id.idText);
-        EditText route = findViewById(R.id.routeText);
 
-        // Copies user input into ticket creator
-        EditText price = findViewById(R.id.priceText);
-        String priced = price.getText().toString();
-        double finalPrice= Double.parseDouble(priced);
-        EditText time = findViewById(R.id.timeText);
-        EditText date = findViewById(R.id.dateText);
-        EditText count = findViewById(R.id.countText);
-        String tCount= count.getText().toString();
-        int finalCounter = Integer.parseInt(tCount);
-        TicketMain.Ticket test = new TicketMain.Ticket();
-        test.newTicket("test",10,"Dallas","11/23","10:30",50);
-        test.newTicket(Id.getText().toString(),finalPrice,route.getText().toString(),date.getText().toString(),time.getText().toString(),finalCounter);
-
-    }
 
     public void deleteTicket(){
 
