@@ -27,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MyTicketPage extends AppCompatActivity {
-
+    public static int x10=1;
     protected void onCreate(Bundle savedInstanceState) {
         Button buy;
         super.onCreate(savedInstanceState);
@@ -54,7 +54,7 @@ public class MyTicketPage extends AppCompatActivity {
             }
         });
     }
-        int x=1;
+
         public void createTicket(View view)
         {
             // Write Ticket to Database
@@ -65,8 +65,8 @@ public class MyTicketPage extends AppCompatActivity {
             // Copies user selection into ticket creator
             TicketMain.Ticket test = new TicketMain.Ticket();
             //test.newTicket("test",10,"Dallas","11/23","10:30",50);
-            test.newTicket(String.valueOf(x),10,route.getSelectedItem().toString(),"11/30",time.getSelectedItem().toString(),1);
-            x++;
+            test.newTicket(String.valueOf(x10),"10",route.getSelectedItem().toString(),"11/30",time.getSelectedItem().toString(),1);
+            x10++;
         }
 
 }
