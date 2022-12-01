@@ -22,7 +22,10 @@ public class Page_Main extends AppCompatActivity {
     ImageButton mapButton,
             routeButton,
             notificationButton,
-            myTickets;
+            myTickets,
+            homeButton,
+            profileButton,
+            settingsButton;
 
     Button temp_profileButton,
             temp_settingsButton;
@@ -37,9 +40,10 @@ public class Page_Main extends AppCompatActivity {
         routeButton = findViewById(R.id.routeButton);
         notificationButton = findViewById(R.id.notificationButton);
         myTickets = findViewById(R.id.myTickets);
+        homeButton = findViewById(R.id.home_button);
+        profileButton = findViewById(R.id.profile_button);
+        settingsButton = findViewById(R.id.settings_button);
 
-        temp_profileButton = findViewById(R.id.temp_profileButton);
-        temp_settingsButton = findViewById(R.id.temp_settingButton);
 
         //variable functions for Image Button
         mapButton.setOnClickListener(new View.OnClickListener() {
@@ -53,39 +57,60 @@ public class Page_Main extends AppCompatActivity {
         routeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Route Button", Toast.LENGTH_SHORT).show();
+                goToRoute();
             }
         });
 
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Page_Main.this, "Notification Button", Toast.LENGTH_SHORT).show();
+                goToNotification();
             }
         });
 
         myTickets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(Page_Main.this, "My Tickets Button", Toast.LENGTH_SHORT).show();
                 goToMyTickets();
             }
         });
 
-        //variable functions for Button
-        temp_profileButton.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToProfile();
+                Intent intent = new Intent(Page_Main.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Page_Main.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Page_Main.this, Settings.class);
+                startActivity(intent);
             }
         });
 
-        temp_settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToSettings();
-            }
-        });
+//        //variable functions for Button
+//        temp_profileButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goToProfile();
+//            }
+//        });
+//
+//        temp_settingsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                goToSettings();
+//            }
+//        });
 
     }
 
@@ -108,27 +133,24 @@ public class Page_Main extends AppCompatActivity {
         startActivity(intent);
     }*/
 
-    /*
-    //go to route
+    //go to routes
     private void goToRoute() {
-        Intent intent = new Intent(this, Page_Route.class);
+        Intent intent = new Intent(this, RoutesActivity.class);
         startActivity(intent);
-    }*/
+    }
 
-    /*
-    //goToNotification
+    //go to notifications
     private void goToNotification() {
-        Intent intent = new Intent(this, Page_Notification.class);
+        Intent intent = new Intent(this, NotificationsActivity.class);
         startActivity(intent);
-     */
+    }
 
 
     //goToMyTickets
     private void goToMyTickets() {
         Intent intent = new Intent(this, TicketCreator.class);
         startActivity(intent);
+
     }
-
 }
-
 
